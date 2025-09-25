@@ -85,6 +85,8 @@ public class TransformGraph : MonoBehaviour
     void SetEdgesBaseNodeDistance(float maxDistance)
     {
         for (int i = 0; i < nodes.Count; i++)
+            nodes[i].Edges.Clear();
+        for (int i = 0; i < nodes.Count; i++)
         {
             Node origin = nodes[i];
             for (int j = i + 1; j < nodes.Count; j++)
