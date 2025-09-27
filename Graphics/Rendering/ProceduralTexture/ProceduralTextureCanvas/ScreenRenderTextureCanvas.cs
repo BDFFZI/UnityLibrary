@@ -19,7 +19,7 @@ public class ScreenRenderTextureCanvas : ScreenTextureCanvas
     protected override void InitializeTexture(ScriptableRenderContext context, ref RenderingData renderingData, CommandBuffer cmd)
     {
         cmd.SetRenderTarget(Texture, depthTexture);
-        cmd.ClearRenderTarget(clearFlags, Color.clear, 1, 0);
+        cmd.ClearRenderTarget(clearFlags, clearColor, 1, 0);
     }
 
     protected override void OnDestroy()
@@ -31,4 +31,5 @@ public class ScreenRenderTextureCanvas : ScreenTextureCanvas
     }
 
     [SerializeField] RTClearFlags clearFlags = RTClearFlags.All;
+    [SerializeField] Color clearColor = Color.clear;
 }

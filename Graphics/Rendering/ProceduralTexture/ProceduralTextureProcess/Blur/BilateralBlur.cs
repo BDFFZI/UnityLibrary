@@ -9,8 +9,8 @@ public class BilateralBlur : MonoBehaviour, IProceduralTextureProcess
     [SerializeField] [ReadOnly] Shader shader;
     [SerializeField] [Range(1, 16)] int iterations = 3;
     [SerializeField] [Min(0)] float blurRadius = 1;
-    [SerializeField] [Range(0.0001f, 0.1f)] float spatialDeviation = 1;
-    [SerializeField] [Range(0.0001f, 0.1f)] float tonalDeviation = 1;
+    [SerializeField] [Range(0.0001f, 0.2f)] float spatialDeviation = 0.1f;
+    [SerializeField] [Range(0.0001f, 0.2f)] float tonalDeviation = 0.1f;
 
     static readonly int BlurRadiusID = Shader.PropertyToID("_BlurRadius");
     static readonly int SpatialDeviation = Shader.PropertyToID("_SpatialDeviation");

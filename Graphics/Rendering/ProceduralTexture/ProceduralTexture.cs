@@ -64,22 +64,17 @@ public class ProceduralTexturePass : RenderPass
         RenderingUtils.ReAllocateIfNeeded(ref swapTexture, descriptor, target.TextureFilterMode, target.TextureWrapMode, name: "_SwapTexture");
 
         CommandBuffer cmd = CommandBufferPool.Get(target.TextureName);
-        int processIndex = 0;
-
-        if (source != null)
-        {
-            if (processes.Length > 0 && processes[0].enabled)
-            {
-                processes[0].ProcessTexture(context, ref renderingData, target, cmd, source.Texture, target.Texture);
-                processIndex++;
-            }
-            else
-                cmd.Blit(source.Texture, target.Texture);
-        }
 
         RTHandle sourceTexture = target.Texture;
         RTHandle destinationTexture = swapTexture;
-        for (; processIndex < processes.Length; processIndex++)
+
+        if (source != null)
+        {
+            cmd.Blit(source.Texture, destinationTexture);
+            (sourceTexture, destinationTexture) = (destinationTexture, sourceTexture);
+        }
+
+        for (int processIndex = 0; processIndex < processes.Length; processIndex++)
         {
             if (processes[processIndex].enabled)
             {
