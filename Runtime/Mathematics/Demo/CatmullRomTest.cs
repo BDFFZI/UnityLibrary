@@ -22,7 +22,7 @@ public class CatmullRomTest : MonoBehaviour
 
     void Update()
     {
-        MathematicsUtility.CatmullRomPath(waypoints, ref controlPoints, ref pathPoints, precision);
+        MathUtility.CatmullRomPath(waypoints, ref controlPoints, ref pathPoints, precision);
         lineRenderer.positionCount = pathPoints.Count;
         for (int i = 0; i < pathPoints.Count; i++)
             lineRenderer.SetPosition(i, pathPoints[i]);
