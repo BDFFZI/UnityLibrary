@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-public static class MathematicsUtility
+public static class MathUtility
 {
     public static float ComponentSum(this float3 vector)
     {
@@ -43,5 +43,17 @@ public static class MathematicsUtility
             }
         }
         pathPoints.Add(controlPoints[^2]);
+    }
+
+    public static float NormalizeAngle(float angle)
+    {
+        return (angle % 360 + 360) % 360;
+    }
+    public static Vector3 NormalizeAngle(Vector3 angle)
+    {
+        angle.x = NormalizeAngle(angle.x);
+        angle.y = NormalizeAngle(angle.y);
+        angle.z = NormalizeAngle(angle.z);
+        return angle;
     }
 }
