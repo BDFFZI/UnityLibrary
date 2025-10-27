@@ -18,8 +18,6 @@ public class PupilDistanceManager : MonoBehaviour
 
     void Start()
     {
-        PXR_Enterprise.InitEnterpriseService();
-        PXR_Enterprise.BindEnterpriseService();
         PupilDistance = pupilDistance;
     }
 }
