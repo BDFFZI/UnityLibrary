@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -16,7 +15,7 @@ public class ProceduralTexture : RenderFeature<ProceduralTexturePass>
     [SerializeField] IProceduralTextureCanvas canvas;
     [SerializeField] IProceduralTextureProcess[] processes;
     [SerializeField] int executeCount = -1;
-    [SerializeField] IProceduralTextureCanvas source;
+    [SerializeField] IProceduralTextureSource source;
 
     protected override void SetupPass(ProceduralTexturePass pass)
     {
@@ -45,7 +44,7 @@ public class ProceduralTexture : RenderFeature<ProceduralTexturePass>
 
 public class ProceduralTexturePass : RenderPass
 {
-    public void Setup(IProceduralTextureCanvas target, IProceduralTextureCanvas source, IProceduralTextureProcess[] processes)
+    public void Setup(IProceduralTextureCanvas target, IProceduralTextureSource source, IProceduralTextureProcess[] processes)
     {
         this.target = target;
         this.source = source;
@@ -92,7 +91,7 @@ public class ProceduralTexturePass : RenderPass
     }
 
     IProceduralTextureCanvas target;
-    IProceduralTextureCanvas source;
+    IProceduralTextureSource source;
     IProceduralTextureProcess[] processes;
     RTHandle swapTexture;
 
