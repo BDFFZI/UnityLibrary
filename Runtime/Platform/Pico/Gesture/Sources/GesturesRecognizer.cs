@@ -56,14 +56,14 @@ public class GesturesRecognizer : MonoBehaviour
 
     void OnEnable()
     {
-        GesturesSystem.LeftHandJoints.jointsUpdated.AddListener(OnJointsUpdated);
-        GesturesSystem.RightHandJoints.jointsUpdated.AddListener(OnJointsUpdated);
+        GesturesSystem.Instance.LeftHandJoints.jointsUpdated.AddListener(OnJointsUpdated);
+        GesturesSystem.Instance.RightHandJoints.jointsUpdated.AddListener(OnJointsUpdated);
     }
 
     void OnDisable()
     {
-        GesturesSystem.LeftHandJoints.jointsUpdated.RemoveListener(OnJointsUpdated);
-        GesturesSystem.RightHandJoints.jointsUpdated.RemoveListener(OnJointsUpdated);
+        GesturesSystem.Instance.LeftHandJoints.jointsUpdated.RemoveListener(OnJointsUpdated);
+        GesturesSystem.Instance.RightHandJoints.jointsUpdated.RemoveListener(OnJointsUpdated);
     }
 
     void Update()

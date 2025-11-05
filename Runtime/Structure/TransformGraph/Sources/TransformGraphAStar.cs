@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class TransformGraphAStar : MonoBehaviour, IRouteAlgorithm
 {
+    public TransformGraph Graph { get => graph; set => graph = value; }
+
     public void Route(Transform origin, Transform destination, ref List<Transform> path)
     {
         path.Clear();
