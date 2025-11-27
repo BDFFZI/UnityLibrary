@@ -1,0 +1,29 @@
+{
+    "name": "BDKX.Pico",
+    "rootNamespace": "",
+    "references": [
+        "GUID:fe685ec1767f73d42b749ea8045bfe43",
+        "GUID:ce522b6ed64c8be4c989a1d26d0e3275",
+        "GUID:65a004a26c89ac5468e8d4b4b057f1c8",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:f34d393b8d26cb44d9a77c73186b30d0",
+        "GUID:92dca609813db224fa6b9a9738e6efe8"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "USE_PICO"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.xr.picoxr",
+            "expression": "0",
+            "define": "USE_PICO"
+        }
+    ],
+    "noEngineReferences": false
+}

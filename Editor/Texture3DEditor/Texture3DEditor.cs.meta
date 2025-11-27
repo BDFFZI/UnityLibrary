@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f8deb618b4c7a72409f88c2b56436149
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - shader: {fileID: 7200000, guid: cec009b85abaf5c4b9a64270a6eaf3f2, type: 3}
+  - canvas: {instanceID: 0}
+  - initializeMesh: {instanceID: 0}
+  - blendTex: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
