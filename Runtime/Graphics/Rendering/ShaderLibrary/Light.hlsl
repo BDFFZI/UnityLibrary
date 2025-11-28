@@ -192,7 +192,7 @@ float3 GlobalIlluminationSpecular_Unity(float3 n, float3 v, float3 specular, flo
     float roughness = max(pow(1 - smoothness, 2),HALF_MIN_SQRT);
     float roughness2 = roughness * roughness;
 
-    float3 radiance = GlossyEnvironmentReflection(reflect(-v, n), perceptualRoughness, 1);
+    float3 irradiance = GlossyEnvironmentReflection(reflect(-v, n), perceptualRoughness, 1);
 
     //反射衰减（确保能量守恒）
     float surfaceReduction = 1.0 / (roughness2 + 1.0);
@@ -202,7 +202,7 @@ float3 GlobalIlluminationSpecular_Unity(float3 n, float3 v, float3 specular, flo
     float ks = lerp(0.04, 1, metallic); //镜射率
     float3 finalSpecular = lerp(specular, saturate(ks + smoothness), fresnel);
 
-    return finalSpecular * radiance * surfaceReduction;
+    return finalSpecular * irradiance * surfaceReduction;
 }
 
 float3 CookTorrance(float3 albedo, float metallic, float smoothness, float3 surfaceNormal, float3 cameraDirection,
