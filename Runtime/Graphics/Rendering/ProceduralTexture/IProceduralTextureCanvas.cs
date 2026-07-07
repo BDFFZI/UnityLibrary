@@ -2,10 +2,8 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public interface IProceduralTextureCanvas
+public interface IProceduralTextureCanvas : IProceduralTextureSource
 {
-    public RTHandle Texture { get; }
-
     public string TextureName { get; }
     public RenderTextureDescriptor TextureDescriptor { get; }
     public FilterMode TextureFilterMode { get; }
